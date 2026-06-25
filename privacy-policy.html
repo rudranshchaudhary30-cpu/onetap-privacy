@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OneTap — Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0e0e10;
+      --card: #16161a;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --accent: #faff69;
+      --border: #2a2a30;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      padding: 48px 20px 80px;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .logo {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .logo svg { width: 26px; height: 26px; }
+    h1 {
+      font-size: 28px;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .updated { color: var(--muted); font-size: 14px; margin: 0 0 36px 58px; }
+    h2 {
+      color: var(--accent);
+      font-size: 19px;
+      margin: 38px 0 12px;
+      letter-spacing: -0.01em;
+    }
+    p { color: var(--text); }
+    ul { padding-left: 22px; }
+    li { margin: 6px 0; color: var(--text); }
+    .muted { color: var(--muted); }
+    strong { color: #fff; }
+    a { color: var(--accent); }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 18px 0;
+    }
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    code {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1px 6px;
+      font-size: 13px;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L4.5 12.5H11L10 22L19.5 11.5H13L13 2Z" fill="#faff69" />
+        </svg>
+      </div>
+      <h1>OneTap Privacy Policy</h1>
+    </div>
+    <p class="updated">Last updated: June 18, 2026</p>
+
+    <p>
+      OneTap is a Chrome extension that fills checkout forms with one tap. We built it
+      privacy-first: your personal details are encrypted and stored only on your own device,
+      and we never collect, sell, or share your data. This policy explains exactly what data
+      is involved and where it goes.
+    </p>
+
+    <h2>What OneTap Collects</h2>
+    <p>
+      To detect and map the fields on a checkout page, OneTap sends a small amount of
+      <strong>structural metadata</strong> about the form to our server for AI-powered field mapping:
+    </p>
+    <ul>
+      <li>Field labels, input types, and structural information (e.g. <code>label: Email</code>, <code>type: text</code>, <code>placeholder: Enter email</code>)</li>
+      <li>The page's hostname and path, used to cache the field layout so future fills are instant</li>
+    </ul>
+    <div class="card">
+      <p style="margin:0">
+        <strong>This metadata contains no personal data.</strong> It describes the shape of the
+        form — never the values you would type into it. Your name, address, and card details are
+        not part of this request.
+      </p>
+    </div>
+
+    <h2>What OneTap Stores Locally</h2>
+    <p>Everything personal stays on your device, encrypted:</p>
+    <ul>
+      <li><strong>Your profiles</strong> (names, email, phone, addresses, card details) are encrypted with <strong>AES-256-GCM</strong> and stored only in your browser's local storage.</li>
+      <li>The encryption key is derived from <strong>your master password</strong> using PBKDF2-SHA256 (600,000 rounds). The password itself is never stored anywhere.</li>
+      <li>An <strong>AI field-mapping cache</strong> is kept in session memory only and is cleared automatically when Chrome closes.</li>
+    </ul>
+
+    <h2>What OneTap Sends to Servers</h2>
+    <ul>
+      <li>Only <strong>form field metadata</strong> — labels, types, and structure — is ever sent over the network.</li>
+      <li><strong>Card numbers and CVVs are explicitly sanitized to placeholders</strong> (e.g. <code>[CARD PRESENT - 16 digits]</code>) before any network request. The actual digits never leave your device.</li>
+      <li>Your names, addresses, emails, and phone numbers are <strong>never</strong> transmitted.</li>
+    </ul>
+
+    <h2>What OneTap Does NOT Do</h2>
+    <ul>
+      <li>Does not track your browsing history</li>
+      <li>Does not collect analytics or telemetry</li>
+      <li>Does not share your data with third parties</li>
+      <li>Does not serve ads</li>
+      <li>Does not sell any user data</li>
+      <li>Card numbers never leave your device</li>
+    </ul>
+
+    <h2>Data Storage Summary</h2>
+    <ul>
+      <li>All personal data is stored <strong>locally on your device, encrypted</strong>.</li>
+      <li><strong>No user data is stored on OneTap's servers.</strong></li>
+      <li>The only server communication is sending form-structure metadata for field detection.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <p>OneTap requests only the permissions it needs to work:</p>
+    <ul>
+      <li><code>storage</code> — to save your encrypted profiles on your device.</li>
+      <li><code>scripting</code> — to place the autofill button and fill fields on the current page.</li>
+      <li>Host access (<code>&lt;all_urls&gt;</code>) — so one-tap checkout works on any e-commerce site you visit. OneTap only acts on a page when you click it.</li>
+    </ul>
+
+    <h2>Changes to This Policy</h2>
+    <p>
+      If this policy changes, we'll update the date at the top of this page. Continued use of
+      OneTap after an update means you accept the revised policy.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions about your privacy? Email us at
+      <a href="mailto:support@onetap.app">support@onetap.app</a>.
+    </p>
+
+    <div class="footer">
+      © 2026 OneTap · Rudransh Chaudhary. Your data stays yours.
+    </div>
+  </div>
+</body>
+</html>
